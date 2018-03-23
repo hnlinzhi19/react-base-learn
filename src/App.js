@@ -2,11 +2,13 @@
 import React, { Component } from 'react';
 import { Router, Scene, Stack,Tabs } from 'react-native-router-flux';
 import {StyleSheet} from 'react-native';
-import Welcome from './components/welcome.js';
-import Home from './components/home.js';
-import About from './components/about.js';
-import RepoList from './components/repolist.js';
-import RepoInfo from './components/repoinfo.js';
+
+import Home from './views/Home';
+import User from './views/User';
+import Cart from './views/Cart';
+import Classify from './views/Product/classify';
+import {pxToDp} from './utils';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -17,10 +19,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
   },
   tabBarSelectedItemStyle: {
-    backgroundColor: '#ddd',
+    backgroundColor: '#666',
   },
   labelStyle:{
-    color:'#000'
+    color:'#fff',
+    fontSize: pxToDp(24),
+    lineHeight: pxToDp(42),
+    fontWeight: 'bold'
   }
 });
 
@@ -29,15 +34,10 @@ export default class App extends Component{
     return(
       <Router hideNavBar= "true">
         <Scene key="root">
-          <Tabs key="Index" tabBarPosition="bottom" swipeEnabled labelStyle={styles.labelStyle} tabBarStyle={styles.tabBarStyle} activeBackgroundColor="white" activeTintColor="black" inactiveBackgroundColor="rgba(255, 0, 0, 0.5)" >
-          {/* <Stack key="Index" tabs={true} hideTabBar titleStyle={{alignSelf: 'center'}}> */}
-            <Scene key="Home" component={Home} title="home" hideNavBar={true}  tabBarLabel="home" />
-            <Scene key="About" component={About} title="about" hideNavBar={true}  tabBarLabel="about" />
-          {/* </Stack> */}
-          </Tabs>
-          <Scene key="Welcome" component={Welcome} title="Welcome" hideNavBar={true} />
-          <Scene key="RepoList" component={RepoList} title="RepoList" hideNavBar={true}  />
-          <Scene key="RepoInfo" component={RepoInfo} title="RepoInfo" hideNavBar={true}  />
+            <Scene key="Home" component={Home} title="Home" hideNavBar={true}  tabBarLabel="持家有道" initial />
+            <Scene key="Classify" component={Classify} title="Classify" hideNavBar={true}  tabBarLabel="分类" />
+            <Scene key="Cart" component={Cart} title="Cart" hideNavBar={true}  tabBarLabel="购物车" />
+            <Scene key="User" component={User} title="User" hideNavBar={true}  tabBarLabel="我的" />
         </Scene>
       </Router>
     );

@@ -5458,9 +5458,9 @@ react-native-safe-module@^1.1.0:
   dependencies:
     dedent "^0.6.0"
 
-react-native-scripts@1.11.1:
+react-native-scripts@^1.11.1:
   version "1.11.1"
-  resolved "https://registry.yarnpkg.com/react-native-scripts/-/react-native-scripts-1.11.1.tgz#a9f0a5c91a85d34acee9ec9012cf614665670b80"
+  resolved "http://registry.npm.taobao.org/react-native-scripts/download/react-native-scripts-1.11.1.tgz#a9f0a5c91a85d34acee9ec9012cf614665670b80"
   dependencies:
     "@expo/bunyan" "1.8.10"
     babel-runtime "^6.9.2"
@@ -5507,9 +5507,9 @@ react-native-vector-icons@~4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native@0.52.0:
-  version "0.52.0"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.52.0.tgz#9784663a2aa40b30c87d4c9c06ef26cf8d419d91"
+react-native@^0.52.0:
+  version "0.52.3"
+  resolved "http://registry.npm.taobao.org/react-native/download/react-native-0.52.3.tgz#e11698e19bbc8f98135f82d40ac82ccb046641fd"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -5622,9 +5622,9 @@ react-tween-state@^0.1.5:
     raf "^3.1.0"
     tween-functions "^1.0.1"
 
-react@16.2.0, react@^16.0.0:
+react@^16.0.0, react@^16.2.0:
   version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+  resolved "http://registry.npm.taobao.org/react/download/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -5700,6 +5700,10 @@ redux-logger@^2.7.4:
   resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-2.10.2.tgz#3c5a5f0a6f32577c1deadf6655f257f82c6c3937"
   dependencies:
     deep-diff "0.3.4"
+
+redux-thunk@^2.2.0:
+  version "2.2.0"
+  resolved "http://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 redux@^3.6.0, redux@^3.7.2:
   version "3.7.2"
