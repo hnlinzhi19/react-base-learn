@@ -3,7 +3,6 @@ import {NativeModules,Platform} from 'react-native';
 import { Container, Content, Header, Left, Right, Body, Title, Text, Button, Card, CardItem } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import {pxToDp ,ifIphoneX} from '../../utils';
-import CommonFooter from '../../components/CommonFooter';
 
 const statusHeight = ifIphoneX();
  class Home extends Component {
@@ -22,7 +21,6 @@ const statusHeight = ifIphoneX();
                   <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> home </Text>
                   <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> home </Text>
                 </Content>
-                <CommonFooter />
             </Container>
         );
     }

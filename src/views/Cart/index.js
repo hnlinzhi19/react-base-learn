@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {NativeModules,Platform} from 'react-native';
-import { Container, Content, Header, Left, Right, Body, Title, Text, Button, Card, CardItem } from 'native-base';
+import { Container, Content, Header, Left, Right, Body, Icon,Title, Text, Button, Card, CardItem } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import {pxToDp ,ifIphoneX} from '../../utils';
 
@@ -9,8 +9,18 @@ const statusHeight = ifIphoneX();
     render() {
         return (
             <Container>
-                {/* <Header/> */}
-                <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight, paddingHorizontal: 10}}>
+                 <Header >
+                  <Left>
+                    <Button transparent onPress= {() =>{Actions.pop();}}>
+                      <Icon name='arrow-back' />
+                    </Button>
+                  </Left>
+                  <Body>
+                    <Title>Header</Title>
+                  </Body>
+                  <Right />
+                </Header>
+                <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: pxToDp(20), paddingHorizontal: 10}}>
                   <Button dark block onPress= {() =>{ Actions.RepoList();}} >
                       <Text> Cart </Text>
                     </Button>
