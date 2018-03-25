@@ -16,7 +16,7 @@ const statusHeight = ifIphoneX();
                     </Button>
                   </Left>
                   <Body>
-                    <Title>Header</Title>
+                    <Title>购物车</Title>
                   </Body>
                   <Right />
                 </Header>

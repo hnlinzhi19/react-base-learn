@@ -11,7 +11,7 @@ const statusHeight = ifIphoneX();
             <Container>
                 {/* <Header/> */}
                 <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight, paddingHorizontal: 10}}>
-                  <Button dark block onPress= {() =>{ Actions.RepoList();}} >
+                  <Button dark block onPress= {() =>{ Actions.Cart();}} >
                       <Text> home </Text>
                     </Button>
                   <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> home </Text>

@@ -4,6 +4,7 @@ import { Container, Content, Header, Left, Right, Body, Title, Text, Button, Car
 import { Actions } from 'react-native-router-flux';
 import {pxToDp ,ifIphoneX} from '../../utils';
 
+
 const statusHeight = ifIphoneX();
  class User extends Component {
     render() {
@@ -11,7 +12,7 @@ const statusHeight = ifIphoneX();
             <Container>
                 {/* <Header/> */}
                 <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight, paddingHorizontal: 10}}>
-                  <Button dark block onPress= {() =>{ Actions.RepoList();}} >
+                  <Button dark block onPress= {() =>{ Actions.Cart();}} >
                       <Text> User </Text>
                     </Button>
                   <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
