@@ -6,25 +6,25 @@ import {pxToDp ,ifIphoneX} from '../../utils';
 
 
 const statusHeight = ifIphoneX();
- class User extends Component {
-    render() {
-        return (
-            <Container>
-                {/* <Header/> */}
-                <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight, paddingHorizontal: 10}}>
-                  <Button dark block onPress= {() =>{ Actions.Cart();}} >
-                      <Text> User </Text>
-                    </Button>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                  <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
-                </Content>
-            </Container>
-        );
-    }
+ 	class User extends Component {
+		render() {
+			return (
+				<Container>
+					{/* <Header/> */}
+					<Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight, paddingHorizontal: 10}}>
+						<Button dark block onPress= {() =>{ Actions.Cart();}} >
+								<Text> User </Text>
+							</Button>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+						<Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> User </Text>
+					</Content>
+				</Container>
+			);
+	}
 }
 
 export default User;
