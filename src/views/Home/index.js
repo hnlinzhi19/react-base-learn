@@ -5,7 +5,6 @@ import { Actions } from 'react-native-router-flux';
 import Swiper from 'react-native-swiper';
 import { Col, Grid } from "react-native-easy-grid";
 
-
 import {pxToDp ,ifIphoneX} from '../../utils';
 import {getHome1, getHome2 } from '../../api/home';
 
@@ -67,6 +66,18 @@ const styles = StyleSheet.create({
     special2:{
         width: pxToDp(232),
         height: pxToDp(200)
+    },
+    paginationStyle:{
+        bottom: 0,
+    },
+    dotStyle: {
+        backgroundColor:'transparent', 
+        borderWidth: pxToDp(2),
+        borderColor: '#fff'
+    },
+    activeDotStyle:{
+        backgroundColor: '#fff',
+        borderColor:'#fff'
     }
 });
 
@@ -113,7 +124,7 @@ const statusHeight = ifIphoneX();
     }
     renderBanner(){
         if (this.state.bannerList.length) {
-            return ( <Swiper style={styles.banenr} loop autoplay autoplayTimeout={this.state.littleBannerSpeed}>
+            return ( <Swiper dotStyle={styles.dotStyle} activeDotStyle={styles.activeDotStyle} style={styles.banenr} paginationStyle={styles.paginationStyle} loop autoplay autoplayTimeout={this.state.littleBannerSpeed}>
                 {
                     this.state.bannerList.map((v) => <View key={v.link}>
                         <Image source={{uri:v.link}} style={styles.banenrImg} />
@@ -147,7 +158,13 @@ const statusHeight = ifIphoneX();
     }
     renderAd(){
         if (this.state.adPic1) {
-            return <View><Image source={{uri:this.state.adPic1.imgLink}} style={{width:pxToDp(750),height: pxToDp(150)}} /></View>
+            return <View style={{marginTop:pxToDp(2)}}><Image source={{uri:this.state.adPic1.imgLink}} style={{width:pxToDp(750),height: pxToDp(150)}} /></View>
+        }
+        return <View></View>
+    }
+    renderAd2(){
+        if (this.state.adPic2) {
+            return <View style={{marginTop:pxToDp(2)}}><Image source={{uri:this.state.adPic2.imgLink}} style={{width:pxToDp(750),height: pxToDp(150)}} /></View>
         }
         return <View></View>
     }
@@ -175,6 +192,7 @@ const statusHeight = ifIphoneX();
                         <Col style={styles.specialWrapper}>{this.renderSpecial()}</Col>
                     </Grid>
                     {this.renderAd()}
+                    {this.renderAd2()}
                     <Text style={{fontSize: pxToDp(24),lineHeight:pxToDp(28)}}> home </Text>
                 </Content>
             </Container>
