@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import { Container, Content, Header, Left, Right, Body, Title, Text, Button, Card, CardItem, Icon,Segment } from 'native-base';
+import { Container, Content, Header, Left, Right, Body, Title, Text, Button, Card, CardItem, Icon,Item, Input } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import Swiper from 'react-native-swiper';
 import { Col, Grid } from "react-native-easy-grid";
@@ -10,7 +10,20 @@ import {getHome1, getHome2 } from '../../api/home';
 
 import HomeNav from '../../components/HomeNav'
 
+const statusHeight = ifIphoneX();
+
 const styles = StyleSheet.create({
+    headerStyle:{
+        marginTop:statusHeight,
+        backgroundColor:'rgb(119, 185, 25)'
+    },
+    headerInput:{
+        height: pxToDp(30),
+    },
+    headerItem:{
+        height: pxToDp(50),
+        borderRadius: pxToDp(25)
+    },
     banenr:{
         height: pxToDp(293),
     },
@@ -81,7 +94,6 @@ const styles = StyleSheet.create({
     }
 });
 
-const statusHeight = ifIphoneX();
  class Home extends Component {
     constructor(){
         super();
@@ -124,9 +136,10 @@ const statusHeight = ifIphoneX();
     }
     renderBanner(){
         if (this.state.bannerList.length) {
+            console.log(1231);
             return ( <Swiper dotStyle={styles.dotStyle} activeDotStyle={styles.activeDotStyle} style={styles.banenr} paginationStyle={styles.paginationStyle} loop autoplay autoplayTimeout={this.state.littleBannerSpeed}>
                 {
-                    this.state.bannerList.map((v) => <View key={v.link}>
+                    this.state.bannerList.map((v,index) => <View key={v.link + index} style={{width: pxToDp(750),backgroundColor:'#000'}}>
                         <Image source={{uri:v.link}} style={styles.banenrImg} />
                     </View>)
                 }
@@ -172,9 +185,21 @@ const statusHeight = ifIphoneX();
         return (
             <Container style={{backgroundColor:'#f5f5f5'}}>
                 {/* <Header/> */}
-                <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center', paddingTop: statusHeight}}>
+                <Header searchBar rounded style={styles.headerStyle}>
+                    <Item style={styles.headerItem}>
+                        <Icon name="ios-search" />
+                        <Input placeholder="请输入商品关键词"  />
+                        {/* <Icon name="ios-people" /> */}
+                    </Item>
+                    <Button>
+                        <Text>搜索</Text>
+                    </Button>
+                    </Header>
+                <Content contentContainerStyle= {{justifyContent: 'center', alignItems: 'center'}}>
                 {/* banner */}
-                   {this.renderBanner()}
+                   <Grid>
+                        <Col>{this.renderBanner()}</Col>
+                    </Grid>
                     {/* 导航 */}
                     <View style={styles.navListView}>
                     {

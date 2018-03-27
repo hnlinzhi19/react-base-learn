@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
   },
   nowButtonStyle:{
     borderRadius: 0,
+    backgroundColor: '#313131',
   },
   activeButtonStyle:{
     borderRadius: 0,

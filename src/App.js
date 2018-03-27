@@ -13,7 +13,7 @@ export default class App extends Component{
     return(
       <Router hideNavBar >
         <Stack key="root">
-          <Scene tabs key="index" tabBarComponent={CommonFooter} showLabel initial >
+          <Scene tabs key="index" tabBarPosition="bottom" swipeEnabled={false} tabBarComponent={CommonFooter} showLabel initial >
             <Scene key="Home" component={Home} type="push" title="Home" hideNavBar tabBarLabel="持家有道" />
             <Scene key="Classify" component={Classify} type="push" title="Classify" hideNavBar tabBarLabel="分类" />
             <Scene key="User" component={User} type="push" title="User" hideNavBar tabBarLabel="我的" />
